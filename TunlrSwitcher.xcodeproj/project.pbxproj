@@ -19,6 +19,7 @@
 		FDCF80C215E5937600D6B88D /* TunlrSwitcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FDCF80C115E5937600D6B88D /* TunlrSwitcherTests.m */; };
 		FDCF80CC15E5938D00D6B88D /* switch.sh in Resources */ = {isa = PBXBuildFile; fileRef = FDCF80CB15E5938D00D6B88D /* switch.sh */; };
 		FDCF80CE15E593D500D6B88D /* tunlrSwitchrAppDelegate.applescript in Sources */ = {isa = PBXBuildFile; fileRef = FDCF80CD15E593D500D6B88D /* tunlrSwitchrAppDelegate.applescript */; };
+		FDCF80DD15E59AFC00D6B88D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FDCF80DC15E59AFC00D6B88D /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		FDCF80C115E5937600D6B88D /* TunlrSwitcherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TunlrSwitcherTests.m; sourceTree = "<group>"; };
 		FDCF80CB15E5938D00D6B88D /* switch.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = switch.sh; sourceTree = "<group>"; };
 		FDCF80CD15E593D500D6B88D /* tunlrSwitchrAppDelegate.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = tunlrSwitchrAppDelegate.applescript; sourceTree = "<group>"; };
+		FDCF80DC15E59AFC00D6B88D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		FDCF808815E5937500D6B88D = {
 			isa = PBXGroup;
 			children = (
+				FDCF80DC15E59AFC00D6B88D /* README.md */,
 				FDCF80CB15E5938D00D6B88D /* switch.sh */,
 				FDCF809D15E5937500D6B88D /* TunlrSwitcher */,
 				FDCF80BA15E5937600D6B88D /* TunlrSwitcherTests */,
@@ -235,6 +238,7 @@
 				FDCF80A815E5937500D6B88D /* Credits.rtf in Resources */,
 				FDCF80AE15E5937500D6B88D /* MainMenu.xib in Resources */,
 				FDCF80CC15E5938D00D6B88D /* switch.sh in Resources */,
+				FDCF80DD15E59AFC00D6B88D /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,6 +455,7 @@
 				FDCF80C715E5937600D6B88D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FDCF80C815E5937600D6B88D /* Build configuration list for PBXNativeTarget "TunlrSwitcherTests" */ = {
 			isa = XCConfigurationList;
@@ -459,6 +464,7 @@
 				FDCF80CA15E5937600D6B88D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
