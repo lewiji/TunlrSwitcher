@@ -1,0 +1,458 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FDCF809815E5937500D6B88D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDCF809715E5937500D6B88D /* Cocoa.framework */; };
+		FDCF80A215E5937500D6B88D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FDCF80A015E5937500D6B88D /* InfoPlist.strings */; };
+		FDCF80A415E5937500D6B88D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FDCF80A315E5937500D6B88D /* main.m */; };
+		FDCF80A815E5937500D6B88D /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FDCF80A615E5937500D6B88D /* Credits.rtf */; };
+		FDCF80AB15E5937500D6B88D /* tunlrSwitcherAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FDCF80AA15E5937500D6B88D /* tunlrSwitcherAppDelegate.m */; };
+		FDCF80AE15E5937500D6B88D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDCF80AC15E5937500D6B88D /* MainMenu.xib */; };
+		FDCF80B615E5937600D6B88D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDCF80B515E5937600D6B88D /* SenTestingKit.framework */; };
+		FDCF80B715E5937600D6B88D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDCF809715E5937500D6B88D /* Cocoa.framework */; };
+		FDCF80BF15E5937600D6B88D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FDCF80BD15E5937600D6B88D /* InfoPlist.strings */; };
+		FDCF80C215E5937600D6B88D /* TunlrSwitcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FDCF80C115E5937600D6B88D /* TunlrSwitcherTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FDCF80B815E5937600D6B88D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FDCF808A15E5937500D6B88D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FDCF809215E5937500D6B88D;
+			remoteInfo = TunlrSwitcher;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FDCF809315E5937500D6B88D /* TunlrSwitcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TunlrSwitcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDCF809715E5937500D6B88D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		FDCF809A15E5937500D6B88D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		FDCF809B15E5937500D6B88D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		FDCF809C15E5937500D6B88D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FDCF809F15E5937500D6B88D /* TunlrSwitcher-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TunlrSwitcher-Info.plist"; sourceTree = "<group>"; };
+		FDCF80A115E5937500D6B88D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FDCF80A315E5937500D6B88D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FDCF80A515E5937500D6B88D /* TunlrSwitcher-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TunlrSwitcher-Prefix.pch"; sourceTree = "<group>"; };
+		FDCF80A715E5937500D6B88D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		FDCF80A915E5937500D6B88D /* tunlrSwitcherAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tunlrSwitcherAppDelegate.h; sourceTree = "<group>"; };
+		FDCF80AA15E5937500D6B88D /* tunlrSwitcherAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = tunlrSwitcherAppDelegate.m; sourceTree = "<group>"; };
+		FDCF80AD15E5937500D6B88D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		FDCF80B415E5937600D6B88D /* TunlrSwitcherTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TunlrSwitcherTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDCF80B515E5937600D6B88D /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		FDCF80BC15E5937600D6B88D /* TunlrSwitcherTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TunlrSwitcherTests-Info.plist"; sourceTree = "<group>"; };
+		FDCF80BE15E5937600D6B88D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FDCF80C015E5937600D6B88D /* TunlrSwitcherTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TunlrSwitcherTests.h; sourceTree = "<group>"; };
+		FDCF80C115E5937600D6B88D /* TunlrSwitcherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TunlrSwitcherTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FDCF809015E5937500D6B88D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDCF809815E5937500D6B88D /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDCF80B015E5937600D6B88D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDCF80B615E5937600D6B88D /* SenTestingKit.framework in Frameworks */,
+				FDCF80B715E5937600D6B88D /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FDCF808815E5937500D6B88D = {
+			isa = PBXGroup;
+			children = (
+				FDCF809D15E5937500D6B88D /* TunlrSwitcher */,
+				FDCF80BA15E5937600D6B88D /* TunlrSwitcherTests */,
+				FDCF809615E5937500D6B88D /* Frameworks */,
+				FDCF809415E5937500D6B88D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FDCF809415E5937500D6B88D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FDCF809315E5937500D6B88D /* TunlrSwitcher.app */,
+				FDCF80B415E5937600D6B88D /* TunlrSwitcherTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FDCF809615E5937500D6B88D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FDCF809715E5937500D6B88D /* Cocoa.framework */,
+				FDCF80B515E5937600D6B88D /* SenTestingKit.framework */,
+				FDCF809915E5937500D6B88D /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FDCF809915E5937500D6B88D /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FDCF809A15E5937500D6B88D /* AppKit.framework */,
+				FDCF809B15E5937500D6B88D /* CoreData.framework */,
+				FDCF809C15E5937500D6B88D /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		FDCF809D15E5937500D6B88D /* TunlrSwitcher */ = {
+			isa = PBXGroup;
+			children = (
+				FDCF80A915E5937500D6B88D /* tunlrSwitcherAppDelegate.h */,
+				FDCF80AA15E5937500D6B88D /* tunlrSwitcherAppDelegate.m */,
+				FDCF80AC15E5937500D6B88D /* MainMenu.xib */,
+				FDCF809E15E5937500D6B88D /* Supporting Files */,
+			);
+			path = TunlrSwitcher;
+			sourceTree = "<group>";
+		};
+		FDCF809E15E5937500D6B88D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FDCF809F15E5937500D6B88D /* TunlrSwitcher-Info.plist */,
+				FDCF80A015E5937500D6B88D /* InfoPlist.strings */,
+				FDCF80A315E5937500D6B88D /* main.m */,
+				FDCF80A515E5937500D6B88D /* TunlrSwitcher-Prefix.pch */,
+				FDCF80A615E5937500D6B88D /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FDCF80BA15E5937600D6B88D /* TunlrSwitcherTests */ = {
+			isa = PBXGroup;
+			children = (
+				FDCF80C015E5937600D6B88D /* TunlrSwitcherTests.h */,
+				FDCF80C115E5937600D6B88D /* TunlrSwitcherTests.m */,
+				FDCF80BB15E5937600D6B88D /* Supporting Files */,
+			);
+			path = TunlrSwitcherTests;
+			sourceTree = "<group>";
+		};
+		FDCF80BB15E5937600D6B88D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FDCF80BC15E5937600D6B88D /* TunlrSwitcherTests-Info.plist */,
+				FDCF80BD15E5937600D6B88D /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FDCF809215E5937500D6B88D /* TunlrSwitcher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FDCF80C515E5937600D6B88D /* Build configuration list for PBXNativeTarget "TunlrSwitcher" */;
+			buildPhases = (
+				FDCF808F15E5937500D6B88D /* Sources */,
+				FDCF809015E5937500D6B88D /* Frameworks */,
+				FDCF809115E5937500D6B88D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TunlrSwitcher;
+			productName = TunlrSwitcher;
+			productReference = FDCF809315E5937500D6B88D /* TunlrSwitcher.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FDCF80B315E5937600D6B88D /* TunlrSwitcherTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FDCF80C815E5937600D6B88D /* Build configuration list for PBXNativeTarget "TunlrSwitcherTests" */;
+			buildPhases = (
+				FDCF80AF15E5937600D6B88D /* Sources */,
+				FDCF80B015E5937600D6B88D /* Frameworks */,
+				FDCF80B115E5937600D6B88D /* Resources */,
+				FDCF80B215E5937600D6B88D /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FDCF80B915E5937600D6B88D /* PBXTargetDependency */,
+			);
+			name = TunlrSwitcherTests;
+			productName = TunlrSwitcherTests;
+			productReference = FDCF80B415E5937600D6B88D /* TunlrSwitcherTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FDCF808A15E5937500D6B88D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = tunlrSwitcher;
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "Lewis Pollard";
+			};
+			buildConfigurationList = FDCF808D15E5937500D6B88D /* Build configuration list for PBXProject "TunlrSwitcher" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = FDCF808815E5937500D6B88D;
+			productRefGroup = FDCF809415E5937500D6B88D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FDCF809215E5937500D6B88D /* TunlrSwitcher */,
+				FDCF80B315E5937600D6B88D /* TunlrSwitcherTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FDCF809115E5937500D6B88D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDCF80A215E5937500D6B88D /* InfoPlist.strings in Resources */,
+				FDCF80A815E5937500D6B88D /* Credits.rtf in Resources */,
+				FDCF80AE15E5937500D6B88D /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDCF80B115E5937600D6B88D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDCF80BF15E5937600D6B88D /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FDCF80B215E5937600D6B88D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FDCF808F15E5937500D6B88D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDCF80A415E5937500D6B88D /* main.m in Sources */,
+				FDCF80AB15E5937500D6B88D /* tunlrSwitcherAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDCF80AF15E5937600D6B88D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDCF80C215E5937600D6B88D /* TunlrSwitcherTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FDCF80B915E5937600D6B88D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FDCF809215E5937500D6B88D /* TunlrSwitcher */;
+			targetProxy = FDCF80B815E5937600D6B88D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FDCF80A015E5937500D6B88D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FDCF80A115E5937500D6B88D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FDCF80A615E5937500D6B88D /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FDCF80A715E5937500D6B88D /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		FDCF80AC15E5937500D6B88D /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FDCF80AD15E5937500D6B88D /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		FDCF80BD15E5937600D6B88D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FDCF80BE15E5937600D6B88D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FDCF80C315E5937600D6B88D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		FDCF80C415E5937600D6B88D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		FDCF80C615E5937600D6B88D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TunlrSwitcher/TunlrSwitcher-Prefix.pch";
+				INFOPLIST_FILE = "TunlrSwitcher/TunlrSwitcher-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		FDCF80C715E5937600D6B88D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TunlrSwitcher/TunlrSwitcher-Prefix.pch";
+				INFOPLIST_FILE = "TunlrSwitcher/TunlrSwitcher-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		FDCF80C915E5937600D6B88D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TunlrSwitcher.app/Contents/MacOS/TunlrSwitcher";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TunlrSwitcher/TunlrSwitcher-Prefix.pch";
+				INFOPLIST_FILE = "TunlrSwitcherTests/TunlrSwitcherTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		FDCF80CA15E5937600D6B88D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TunlrSwitcher.app/Contents/MacOS/TunlrSwitcher";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TunlrSwitcher/TunlrSwitcher-Prefix.pch";
+				INFOPLIST_FILE = "TunlrSwitcherTests/TunlrSwitcherTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FDCF808D15E5937500D6B88D /* Build configuration list for PBXProject "TunlrSwitcher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDCF80C315E5937600D6B88D /* Debug */,
+				FDCF80C415E5937600D6B88D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FDCF80C515E5937600D6B88D /* Build configuration list for PBXNativeTarget "TunlrSwitcher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDCF80C615E5937600D6B88D /* Debug */,
+				FDCF80C715E5937600D6B88D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FDCF80C815E5937600D6B88D /* Build configuration list for PBXNativeTarget "TunlrSwitcherTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDCF80C915E5937600D6B88D /* Debug */,
+				FDCF80CA15E5937600D6B88D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FDCF808A15E5937500D6B88D /* Project object */;
+}
