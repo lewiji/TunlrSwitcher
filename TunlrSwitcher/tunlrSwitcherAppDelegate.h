@@ -8,8 +8,12 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface tunlrSwitcherAppDelegate : NSObject <NSApplicationDelegate>
-
+@interface tunlrSwitcherAppDelegate : NSObject <NSApplicationDelegate> {
+    NSWindow *window;
+    IBOutlet NSMenu *statusMenu;
+    NSStatusItem * statusItem;
+}
+-(IBAction)switch:(id)sender;
 @property (assign) IBOutlet NSWindow *window;
 
 @end

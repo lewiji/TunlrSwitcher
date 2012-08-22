@@ -17,6 +17,8 @@
 		FDCF80B715E5937600D6B88D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDCF809715E5937500D6B88D /* Cocoa.framework */; };
 		FDCF80BF15E5937600D6B88D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FDCF80BD15E5937600D6B88D /* InfoPlist.strings */; };
 		FDCF80C215E5937600D6B88D /* TunlrSwitcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FDCF80C115E5937600D6B88D /* TunlrSwitcherTests.m */; };
+		FDCF80CC15E5938D00D6B88D /* switch.sh in Resources */ = {isa = PBXBuildFile; fileRef = FDCF80CB15E5938D00D6B88D /* switch.sh */; };
+		FDCF80CE15E593D500D6B88D /* tunlrSwitchrAppDelegate.applescript in Sources */ = {isa = PBXBuildFile; fileRef = FDCF80CD15E593D500D6B88D /* tunlrSwitchrAppDelegate.applescript */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		FDCF80BE15E5937600D6B88D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FDCF80C015E5937600D6B88D /* TunlrSwitcherTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TunlrSwitcherTests.h; sourceTree = "<group>"; };
 		FDCF80C115E5937600D6B88D /* TunlrSwitcherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TunlrSwitcherTests.m; sourceTree = "<group>"; };
+		FDCF80CB15E5938D00D6B88D /* switch.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = switch.sh; sourceTree = "<group>"; };
+		FDCF80CD15E593D500D6B88D /* tunlrSwitchrAppDelegate.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = tunlrSwitchrAppDelegate.applescript; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,7 @@
 		FDCF808815E5937500D6B88D = {
 			isa = PBXGroup;
 			children = (
+				FDCF80CB15E5938D00D6B88D /* switch.sh */,
 				FDCF809D15E5937500D6B88D /* TunlrSwitcher */,
 				FDCF80BA15E5937600D6B88D /* TunlrSwitcherTests */,
 				FDCF809615E5937500D6B88D /* Frameworks */,
@@ -114,6 +119,7 @@
 		FDCF809D15E5937500D6B88D /* TunlrSwitcher */ = {
 			isa = PBXGroup;
 			children = (
+				FDCF80CD15E593D500D6B88D /* tunlrSwitchrAppDelegate.applescript */,
 				FDCF80A915E5937500D6B88D /* tunlrSwitcherAppDelegate.h */,
 				FDCF80AA15E5937500D6B88D /* tunlrSwitcherAppDelegate.m */,
 				FDCF80AC15E5937500D6B88D /* MainMenu.xib */,
@@ -228,6 +234,7 @@
 				FDCF80A215E5937500D6B88D /* InfoPlist.strings in Resources */,
 				FDCF80A815E5937500D6B88D /* Credits.rtf in Resources */,
 				FDCF80AE15E5937500D6B88D /* MainMenu.xib in Resources */,
+				FDCF80CC15E5938D00D6B88D /* switch.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +271,7 @@
 			files = (
 				FDCF80A415E5937500D6B88D /* main.m in Sources */,
 				FDCF80AB15E5937500D6B88D /* tunlrSwitcherAppDelegate.m in Sources */,
+				FDCF80CE15E593D500D6B88D /* tunlrSwitchrAppDelegate.applescript in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
