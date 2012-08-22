@@ -20,6 +20,7 @@
 		FDCF80CC15E5938D00D6B88D /* switch.sh in Resources */ = {isa = PBXBuildFile; fileRef = FDCF80CB15E5938D00D6B88D /* switch.sh */; };
 		FDCF80CE15E593D500D6B88D /* tunlrSwitchrAppDelegate.applescript in Sources */ = {isa = PBXBuildFile; fileRef = FDCF80CD15E593D500D6B88D /* tunlrSwitchrAppDelegate.applescript */; };
 		FDCF80DD15E59AFC00D6B88D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FDCF80DC15E59AFC00D6B88D /* README.md */; };
+		FDCF80E015E59E4C00D6B88D /* Resources in Resources */ = {isa = PBXBuildFile; fileRef = FDCF80DF15E59E4C00D6B88D /* Resources */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		FDCF80CB15E5938D00D6B88D /* switch.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = switch.sh; sourceTree = "<group>"; };
 		FDCF80CD15E593D500D6B88D /* tunlrSwitchrAppDelegate.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = tunlrSwitchrAppDelegate.applescript; sourceTree = "<group>"; };
 		FDCF80DC15E59AFC00D6B88D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		FDCF80DF15E59E4C00D6B88D /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,8 +83,9 @@
 		FDCF808815E5937500D6B88D = {
 			isa = PBXGroup;
 			children = (
-				FDCF80DC15E59AFC00D6B88D /* README.md */,
 				FDCF80CB15E5938D00D6B88D /* switch.sh */,
+				FDCF80DF15E59E4C00D6B88D /* Resources */,
+				FDCF80DC15E59AFC00D6B88D /* README.md */,
 				FDCF809D15E5937500D6B88D /* TunlrSwitcher */,
 				FDCF80BA15E5937600D6B88D /* TunlrSwitcherTests */,
 				FDCF809615E5937500D6B88D /* Frameworks */,
@@ -239,6 +242,7 @@
 				FDCF80AE15E5937500D6B88D /* MainMenu.xib in Resources */,
 				FDCF80CC15E5938D00D6B88D /* switch.sh in Resources */,
 				FDCF80DD15E59AFC00D6B88D /* README.md in Resources */,
+				FDCF80E015E59E4C00D6B88D /* Resources in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

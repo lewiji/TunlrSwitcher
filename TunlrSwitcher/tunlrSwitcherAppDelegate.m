@@ -10,15 +10,32 @@
 
 @implementation tunlrSwitcherAppDelegate
 
+bool toggled = NO;
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Insert code here to initialize your application
 }
 
 -(void)awakeFromNib{
+    
+    NSDictionary *scriptError = [[NSDictionary alloc] init];
+
     statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     [statusItem setMenu:statusMenu];
-    [statusItem setTitle:@"Tunlr "];
+    
+    NSString *fullPath = [[NSBundle mainBundle] pathForResource:@"tunlrOff.png" ofType:nil inDirectory:@"Resources"];
+    NSImage *image = [[NSImage alloc] initWithContentsOfFile:fullPath];
+    [statusItem setImage: image];
+    
+    /* Reset DNS */
+    NSString *scriptSource = @"do shell script \"for adapter in $adapters do\nnetworksetup -setdnsservers $adapter empty\ndone\" with administrator privileges";
+    NSAppleScript *appleScript = [[NSAppleScript alloc] initWithSource:scriptSource];
+    
+    
+    if(![appleScript executeAndReturnError:&scriptError]) {
+        NSLog([scriptError description], nil);
+    }
 }
 
 -(IBAction)switch:(id)sender {
@@ -27,8 +44,20 @@
     NSString *scriptSource = @"do shell script \"./switch.sh\" with administrator privileges";
     NSAppleScript *appleScript = [[NSAppleScript alloc] initWithSource:scriptSource];
     
+
     if(![appleScript executeAndReturnError:&scriptError]) {
-        NSLog([scriptError description]);
+        NSLog([scriptError description], nil);
+    }
+    
+    if (toggled == NO) {
+        NSString *fullPath = [[NSBundle mainBundle] pathForResource:@"tunlrOn.png" ofType:nil inDirectory:@"Resources"];
+        NSImage *image = [[NSImage alloc] initWithContentsOfFile:fullPath];
+        [statusItem setImage: image];
+        toggled = YES;
+    } else {
+        NSString *fullPath = [[NSBundle mainBundle] pathForResource:@"tunlrOff.png" ofType:nil inDirectory:@"Resources"];
+        NSImage *image = [[NSImage alloc] initWithContentsOfFile:fullPath];
+        [statusItem setImage: image];
     }
 }
 
