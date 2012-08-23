@@ -11,25 +11,28 @@
 @implementation tunlrSwitcherAppDelegate
 
 bool toggled = NO;
+bool firstRun = YES;
 
 NSImage *tunlrOffImage;
 NSImage *tunlrOnImage;
+NSDictionary *prefsArray;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    /* Reset DNS across the board to keep consistency */
-    [self executeShellScriptFromResourcesFolderAndReturnSuccess:@"reset.sh"];
+    NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"Resources/prefs" ofType:@"plist"];
+    prefsArray = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
 }
 
 -(bool)executeShellScriptFromResourcesFolderAndReturnSuccess:(NSString *) scriptName {
     /* Load path to script */
     NSString *scriptPath = [[NSBundle mainBundle] pathForResource:scriptName ofType:nil inDirectory:@"Resources"];
     /* Create AppleScript to run script */
-    NSString *scriptSource = [NSString stringWithFormat:@"do shell script \"%@\" with administrator privileges", scriptPath];
+    NSMutableString *scriptSource = [NSMutableString stringWithFormat:@"do shell script \"%@ %@ %@ %d\" with administrator privileges", scriptPath, [prefsArray objectForKey:@"PrimaryDNSServer"], [prefsArray objectForKey:@"SecondaryDNSServer"], firstRun];
     
     /* Init applescript and execute, returns false if error occurs */
     NSAppleScript *appleScript = [[NSAppleScript alloc] initWithSource:scriptSource];
     NSDictionary *scriptError = [[NSDictionary alloc] init];
+    firstRun = NO;
     return [appleScript executeAndReturnError:&scriptError];
 }
 
@@ -49,7 +52,7 @@ NSImage *tunlrOnImage;
 }
 
 -(IBAction)switch:(id)sender {
-    if ([self executeShellScriptFromResourcesFolderAndReturnSuccess:@"switch.sh"]) {
+    if ([self executeShellScriptFromResourcesFolderAndReturnSuccess:@"switch.sh"] ) {
         toggled ? [statusItem setImage: tunlrOffImage] : [statusItem setImage: tunlrOnImage];
         toggled = !toggled;
     } else {
