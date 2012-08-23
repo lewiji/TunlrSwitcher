@@ -19,7 +19,8 @@
 		FDCF80C215E5937600D6B88D /* TunlrSwitcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FDCF80C115E5937600D6B88D /* TunlrSwitcherTests.m */; };
 		FDCF80DD15E59AFC00D6B88D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FDCF80DC15E59AFC00D6B88D /* README.md */; };
 		FDCF80EA15E5AC1600D6B88D /* TunlrLogo.icns in Resources */ = {isa = PBXBuildFile; fileRef = FDCF80E915E5AC1600D6B88D /* TunlrLogo.icns */; };
-		FDF3D55315E64DD80025BF69 /* Resources in Resources */ = {isa = PBXBuildFile; fileRef = FDF3D55215E64DD80025BF69 /* Resources */; };
+		FDF3D55715E658A20025BF69 /* Resources in Resources */ = {isa = PBXBuildFile; fileRef = FDF3D55615E658A20025BF69 /* Resources */; };
+		FDF3D55915E6594D0025BF69 /* prefDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = FDF3D55815E6594D0025BF69 /* prefDefaults.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +55,8 @@
 		FDCF80C115E5937600D6B88D /* TunlrSwitcherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TunlrSwitcherTests.m; sourceTree = "<group>"; };
 		FDCF80DC15E59AFC00D6B88D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		FDCF80E915E5AC1600D6B88D /* TunlrLogo.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = TunlrLogo.icns; sourceTree = "<group>"; };
-		FDF3D55215E64DD80025BF69 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = "<group>"; };
+		FDF3D55615E658A20025BF69 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = "<group>"; };
+		FDF3D55815E6594D0025BF69 /* prefDefaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = prefDefaults.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +83,7 @@
 		FDCF808815E5937500D6B88D = {
 			isa = PBXGroup;
 			children = (
-				FDF3D55215E64DD80025BF69 /* Resources */,
+				FDF3D55615E658A20025BF69 /* Resources */,
 				FDCF80E915E5AC1600D6B88D /* TunlrLogo.icns */,
 				FDCF80DC15E59AFC00D6B88D /* README.md */,
 				FDCF809D15E5937500D6B88D /* TunlrSwitcher */,
@@ -127,6 +129,7 @@
 				FDCF80AA15E5937500D6B88D /* tunlrSwitcherAppDelegate.m */,
 				FDCF80AC15E5937500D6B88D /* MainMenu.xib */,
 				FDCF809E15E5937500D6B88D /* Supporting Files */,
+				FDF3D55815E6594D0025BF69 /* prefDefaults.plist */,
 			);
 			path = TunlrSwitcher;
 			sourceTree = "<group>";
@@ -239,7 +242,8 @@
 				FDCF80AE15E5937500D6B88D /* MainMenu.xib in Resources */,
 				FDCF80DD15E59AFC00D6B88D /* README.md in Resources */,
 				FDCF80EA15E5AC1600D6B88D /* TunlrLogo.icns in Resources */,
-				FDF3D55315E64DD80025BF69 /* Resources in Resources */,
+				FDF3D55715E658A20025BF69 /* Resources in Resources */,
+				FDF3D55915E6594D0025BF69 /* prefDefaults.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

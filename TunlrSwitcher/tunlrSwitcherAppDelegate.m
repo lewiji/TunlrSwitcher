@@ -15,19 +15,28 @@ bool firstRun = YES;
 
 NSImage *tunlrOffImage;
 NSImage *tunlrOnImage;
-NSDictionary *prefsArray;
+NSString *primaryDNS;
+NSString *secondaryDNS;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"Resources/prefs" ofType:@"plist"];
-    prefsArray = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
+    NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"prefDefaults" ofType:@"plist"];
+    NSDictionary *plistDefaults = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
+    NSLog(@"%@", [plistDefaults allKeys]);
+    NSDictionary *appDefaults = [NSDictionary
+                                 dictionaryWithObjectsAndKeys:[plistDefaults objectForKey:@"PrimaryDNSServer"], @"PrimaryDNSServer", [plistDefaults objectForKey:@"SecondaryDNSServer"], @"SecondaryDNSServer", nil];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:appDefaults];
 }
 
 -(bool)executeShellScriptFromResourcesFolderAndReturnSuccess:(NSString *) scriptName {
+    /* Retrieve DNS servers from user defaults */
+    primaryDNS = [[NSUserDefaults standardUserDefaults] stringForKey:@"PrimaryDNSServer"];
+    secondaryDNS = [[NSUserDefaults standardUserDefaults] stringForKey:@"SecondaryDNSServer"];
+    
     /* Load path to script */
     NSString *scriptPath = [[NSBundle mainBundle] pathForResource:scriptName ofType:nil inDirectory:@"Resources"];
     /* Create AppleScript to run script */
-    NSMutableString *scriptSource = [NSMutableString stringWithFormat:@"do shell script \"%@ %@ %@ %d\" with administrator privileges", scriptPath, [prefsArray objectForKey:@"PrimaryDNSServer"], [prefsArray objectForKey:@"SecondaryDNSServer"], firstRun];
+    NSMutableString *scriptSource = [NSMutableString stringWithFormat:@"do shell script \"%@ %@ %@ %d\" with administrator privileges", scriptPath, primaryDNS, secondaryDNS, firstRun];
     
     /* Init applescript and execute, returns false if error occurs */
     NSAppleScript *appleScript = [[NSAppleScript alloc] initWithSource:scriptSource];
@@ -60,6 +69,27 @@ NSDictionary *prefsArray;
         [alert setMessageText:@"Could not set DNS."];
         [alert runModal];
     }
+}
+
+-(IBAction)openPrefsPanel:(id)sender {
+    if (! prefsWindow ) {
+		prefsWindow	= [[NSWindowController alloc] initWithWindow:[self window]];
+	}
+    
+    primaryDNS = [[NSUserDefaults standardUserDefaults] stringForKey:@"PrimaryDNSServer"];
+    secondaryDNS = [[NSUserDefaults standardUserDefaults] stringForKey:@"SecondaryDNSServer"];
+    
+    [[self primaryDNSField] setStringValue: primaryDNS];
+    [[self secondaryDNSField] setStringValue: secondaryDNS];
+	[prefsWindow showWindow:self];
+    [[self window] makeKeyWindow];
+    [[self window] orderFrontRegardless];
+}
+
+-(IBAction)savePrefs:(id)sender {
+    [[NSUserDefaults standardUserDefaults] setObject:[[self primaryDNSField] stringValue] forKey:@"PrimaryDNSServer"];
+    [[NSUserDefaults standardUserDefaults] setObject:[[self secondaryDNSField] stringValue] forKey:@"SecondaryDNSServer"];
+    [prefsWindow close];
 }
 
 @end
