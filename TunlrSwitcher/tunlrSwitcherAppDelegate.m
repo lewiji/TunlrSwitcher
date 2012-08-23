@@ -12,14 +12,35 @@
 
 bool toggled = NO;
 
+NSImage *tunlrOffImage;
+NSImage *tunlrOnImage;
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    // Insert code here to initialize your application
+    /* Reset DNS across the board to keep consistency */
+    [self executeShellScriptFromResourcesFolderAndReturnSuccess:@"reset.sh"];
+    
+    /* Load images for menubar icon */
+    NSString *fullPath = [[NSBundle mainBundle] pathForResource:@"tunlrOn.png" ofType:nil inDirectory:@"Resources"];
+    tunlrOnImage = [[NSImage alloc] initWithContentsOfFile:fullPath];
+    
+    fullPath = [[NSBundle mainBundle] pathForResource:@"tunlrOff.png" ofType:nil inDirectory:@"Resources"];
+    tunlrOffImage = [[NSImage alloc] initWithContentsOfFile:fullPath];
+}
+
+-(bool)executeShellScriptFromResourcesFolderAndReturnSuccess:(NSString *) scriptName {
+    /* Load path to script */
+    NSString *scriptPath = [[NSBundle mainBundle] pathForResource:scriptName ofType:nil inDirectory:@"Resources"];
+    /* Create AppleScript to run script */
+    NSString *scriptSource = [NSString stringWithFormat:@"do shell script \"%@\" with administrator privileges", scriptPath];
+    
+    /* Init applescript and execute, returns false if error occurs */
+    NSAppleScript *appleScript = [[NSAppleScript alloc] initWithSource:scriptSource];
+    NSDictionary *scriptError = [[NSDictionary alloc] init];
+    return [appleScript executeAndReturnError:&scriptError];
 }
 
 -(void)awakeFromNib{
-    
-    NSDictionary *scriptError = [[NSDictionary alloc] init];
 
     statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     [statusItem setMenu:statusMenu];
@@ -27,38 +48,20 @@ bool toggled = NO;
     NSString *fullPath = [[NSBundle mainBundle] pathForResource:@"tunlrOff.png" ofType:nil inDirectory:@"Resources"];
     NSImage *image = [[NSImage alloc] initWithContentsOfFile:fullPath];
     [statusItem setImage: image];
-    
-    /* Reset DNS */
-    NSString *resetPath = [[NSBundle mainBundle] pathForResource:@"reset.sh" ofType:nil inDirectory:@"Resources"];
-    NSString *scriptSource = [NSString stringWithFormat:@"do shell script \"%@\" with administrator privileges", resetPath];
-    NSAppleScript *appleScript = [[NSAppleScript alloc] initWithSource:scriptSource];
-    
-    if(![appleScript executeAndReturnError:&scriptError]) {
-        NSLog([scriptError description], nil);
-    }
 }
 
 -(IBAction)switch:(id)sender {
-    NSDictionary *scriptError = [[NSDictionary alloc] init]; 
-    /* Create the Applescript to run with the filename and comment string... */
-    NSString *switchPath = [[NSBundle mainBundle] pathForResource:@"switch.sh" ofType:nil inDirectory:@"Resources"];
-    NSString *scriptSource = [NSString stringWithFormat:@"do shell script \"%@\" with administrator privileges", switchPath];
-    NSAppleScript *appleScript = [[NSAppleScript alloc] initWithSource:scriptSource];
-    
-
-    if(![appleScript executeAndReturnError:&scriptError]) {
-        NSLog([scriptError description], nil);
-    } else {
+    if ([self executeShellScriptFromResourcesFolderAndReturnSuccess:@"switch.sh"]) {
         if (toggled == NO) {
-            NSString *fullPath = [[NSBundle mainBundle] pathForResource:@"tunlrOn.png" ofType:nil inDirectory:@"Resources"];
-            NSImage *image = [[NSImage alloc] initWithContentsOfFile:fullPath];
-            [statusItem setImage: image];
+            [statusItem setImage: tunlrOnImage];
             toggled = YES;
         } else {
-            NSString *fullPath = [[NSBundle mainBundle] pathForResource:@"tunlrOff.png" ofType:nil inDirectory:@"Resources"];
-            NSImage *image = [[NSImage alloc] initWithContentsOfFile:fullPath];
-            [statusItem setImage: image];
+            [statusItem setImage: tunlrOffImage];
         }
+    } else {
+        NSAlert *alert = [[NSAlert alloc] init];
+        [alert setMessageText:@"Could not set DNS."];
+        [alert runModal];
     }
 }
 
