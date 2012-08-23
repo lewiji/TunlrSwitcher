@@ -17,7 +17,6 @@
 		FDCF80B715E5937600D6B88D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDCF809715E5937500D6B88D /* Cocoa.framework */; };
 		FDCF80BF15E5937600D6B88D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FDCF80BD15E5937600D6B88D /* InfoPlist.strings */; };
 		FDCF80C215E5937600D6B88D /* TunlrSwitcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FDCF80C115E5937600D6B88D /* TunlrSwitcherTests.m */; };
-		FDCF80CE15E593D500D6B88D /* tunlrSwitchrAppDelegate.applescript in Sources */ = {isa = PBXBuildFile; fileRef = FDCF80CD15E593D500D6B88D /* tunlrSwitchrAppDelegate.applescript */; };
 		FDCF80DD15E59AFC00D6B88D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FDCF80DC15E59AFC00D6B88D /* README.md */; };
 		FDCF80E815E5A8B700D6B88D /* Resources in Resources */ = {isa = PBXBuildFile; fileRef = FDCF80E715E5A8B700D6B88D /* Resources */; };
 		FDCF80EA15E5AC1600D6B88D /* TunlrLogo.icns in Resources */ = {isa = PBXBuildFile; fileRef = FDCF80E915E5AC1600D6B88D /* TunlrLogo.icns */; };
@@ -53,7 +52,6 @@
 		FDCF80BE15E5937600D6B88D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FDCF80C015E5937600D6B88D /* TunlrSwitcherTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TunlrSwitcherTests.h; sourceTree = "<group>"; };
 		FDCF80C115E5937600D6B88D /* TunlrSwitcherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TunlrSwitcherTests.m; sourceTree = "<group>"; };
-		FDCF80CD15E593D500D6B88D /* tunlrSwitchrAppDelegate.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = tunlrSwitchrAppDelegate.applescript; sourceTree = "<group>"; };
 		FDCF80DC15E59AFC00D6B88D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		FDCF80E715E5A8B700D6B88D /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = "<group>"; };
 		FDCF80E915E5AC1600D6B88D /* TunlrLogo.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = TunlrLogo.icns; sourceTree = "<group>"; };
@@ -125,7 +123,6 @@
 		FDCF809D15E5937500D6B88D /* TunlrSwitcher */ = {
 			isa = PBXGroup;
 			children = (
-				FDCF80CD15E593D500D6B88D /* tunlrSwitchrAppDelegate.applescript */,
 				FDCF80A915E5937500D6B88D /* tunlrSwitcherAppDelegate.h */,
 				FDCF80AA15E5937500D6B88D /* tunlrSwitcherAppDelegate.m */,
 				FDCF80AC15E5937500D6B88D /* MainMenu.xib */,
@@ -279,7 +276,6 @@
 			files = (
 				FDCF80A415E5937500D6B88D /* main.m in Sources */,
 				FDCF80AB15E5937500D6B88D /* tunlrSwitcherAppDelegate.m in Sources */,
-				FDCF80CE15E593D500D6B88D /* tunlrSwitchrAppDelegate.applescript in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
