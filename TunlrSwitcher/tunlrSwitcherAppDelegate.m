@@ -19,13 +19,6 @@ NSImage *tunlrOnImage;
 {
     /* Reset DNS across the board to keep consistency */
     [self executeShellScriptFromResourcesFolderAndReturnSuccess:@"reset.sh"];
-    
-    /* Load images for menubar icon */
-    NSString *fullPath = [[NSBundle mainBundle] pathForResource:@"tunlrOn.png" ofType:nil inDirectory:@"Resources"];
-    tunlrOnImage = [[NSImage alloc] initWithContentsOfFile:fullPath];
-    
-    fullPath = [[NSBundle mainBundle] pathForResource:@"tunlrOff.png" ofType:nil inDirectory:@"Resources"];
-    tunlrOffImage = [[NSImage alloc] initWithContentsOfFile:fullPath];
 }
 
 -(bool)executeShellScriptFromResourcesFolderAndReturnSuccess:(NSString *) scriptName {
@@ -41,13 +34,17 @@ NSImage *tunlrOnImage;
 }
 
 -(void)awakeFromNib{
+    /* Load images for menubar icon */
+    NSString *fullPath = [[NSBundle mainBundle] pathForResource:@"tunlrOn.png" ofType:nil inDirectory:@"Resources"];
+    tunlrOnImage = [[NSImage alloc] initWithContentsOfFile:fullPath];
+    
+    fullPath = [[NSBundle mainBundle] pathForResource:@"tunlrOff.png" ofType:nil inDirectory:@"Resources"];
+    tunlrOffImage = [[NSImage alloc] initWithContentsOfFile:fullPath];
 
     statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     [statusItem setMenu:statusMenu];
     
-    NSString *fullPath = [[NSBundle mainBundle] pathForResource:@"tunlrOff.png" ofType:nil inDirectory:@"Resources"];
-    NSImage *image = [[NSImage alloc] initWithContentsOfFile:fullPath];
-    [statusItem setImage: image];
+    [statusItem setImage: tunlrOffImage];
     [statusItem setHighlightMode:YES];
 }
 
