@@ -17,10 +17,10 @@
 		FDCF80B715E5937600D6B88D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDCF809715E5937500D6B88D /* Cocoa.framework */; };
 		FDCF80BF15E5937600D6B88D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FDCF80BD15E5937600D6B88D /* InfoPlist.strings */; };
 		FDCF80C215E5937600D6B88D /* TunlrSwitcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FDCF80C115E5937600D6B88D /* TunlrSwitcherTests.m */; };
-		FDCF80CC15E5938D00D6B88D /* switch.sh in Resources */ = {isa = PBXBuildFile; fileRef = FDCF80CB15E5938D00D6B88D /* switch.sh */; };
 		FDCF80CE15E593D500D6B88D /* tunlrSwitchrAppDelegate.applescript in Sources */ = {isa = PBXBuildFile; fileRef = FDCF80CD15E593D500D6B88D /* tunlrSwitchrAppDelegate.applescript */; };
 		FDCF80DD15E59AFC00D6B88D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FDCF80DC15E59AFC00D6B88D /* README.md */; };
-		FDCF80E015E59E4C00D6B88D /* Resources in Resources */ = {isa = PBXBuildFile; fileRef = FDCF80DF15E59E4C00D6B88D /* Resources */; };
+		FDCF80E815E5A8B700D6B88D /* Resources in Resources */ = {isa = PBXBuildFile; fileRef = FDCF80E715E5A8B700D6B88D /* Resources */; };
+		FDCF80EA15E5AC1600D6B88D /* TunlrLogo.icns in Resources */ = {isa = PBXBuildFile; fileRef = FDCF80E915E5AC1600D6B88D /* TunlrLogo.icns */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,10 +53,10 @@
 		FDCF80BE15E5937600D6B88D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FDCF80C015E5937600D6B88D /* TunlrSwitcherTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TunlrSwitcherTests.h; sourceTree = "<group>"; };
 		FDCF80C115E5937600D6B88D /* TunlrSwitcherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TunlrSwitcherTests.m; sourceTree = "<group>"; };
-		FDCF80CB15E5938D00D6B88D /* switch.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = switch.sh; sourceTree = "<group>"; };
 		FDCF80CD15E593D500D6B88D /* tunlrSwitchrAppDelegate.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = tunlrSwitchrAppDelegate.applescript; sourceTree = "<group>"; };
 		FDCF80DC15E59AFC00D6B88D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		FDCF80DF15E59E4C00D6B88D /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = "<group>"; };
+		FDCF80E715E5A8B700D6B88D /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = "<group>"; };
+		FDCF80E915E5AC1600D6B88D /* TunlrLogo.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = TunlrLogo.icns; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,8 +83,8 @@
 		FDCF808815E5937500D6B88D = {
 			isa = PBXGroup;
 			children = (
-				FDCF80CB15E5938D00D6B88D /* switch.sh */,
-				FDCF80DF15E59E4C00D6B88D /* Resources */,
+				FDCF80E915E5AC1600D6B88D /* TunlrLogo.icns */,
+				FDCF80E715E5A8B700D6B88D /* Resources */,
 				FDCF80DC15E59AFC00D6B88D /* README.md */,
 				FDCF809D15E5937500D6B88D /* TunlrSwitcher */,
 				FDCF80BA15E5937600D6B88D /* TunlrSwitcherTests */,
@@ -240,9 +240,9 @@
 				FDCF80A215E5937500D6B88D /* InfoPlist.strings in Resources */,
 				FDCF80A815E5937500D6B88D /* Credits.rtf in Resources */,
 				FDCF80AE15E5937500D6B88D /* MainMenu.xib in Resources */,
-				FDCF80CC15E5938D00D6B88D /* switch.sh in Resources */,
 				FDCF80DD15E59AFC00D6B88D /* README.md in Resources */,
-				FDCF80E015E59E4C00D6B88D /* Resources in Resources */,
+				FDCF80E815E5A8B700D6B88D /* Resources in Resources */,
+				FDCF80EA15E5AC1600D6B88D /* TunlrLogo.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,7 +359,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
@@ -381,7 +381,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				SDKROOT = macosx;
 			};
 			name = Release;
