@@ -50,12 +50,8 @@ NSImage *tunlrOnImage;
 
 -(IBAction)switch:(id)sender {
     if ([self executeShellScriptFromResourcesFolderAndReturnSuccess:@"switch.sh"]) {
-        if (toggled == NO) {
-            [statusItem setImage: tunlrOnImage];
-            toggled = YES;
-        } else {
-            [statusItem setImage: tunlrOffImage];
-        }
+        toggled ? [statusItem setImage: tunlrOffImage] : [statusItem setImage: tunlrOnImage];
+        toggled = !toggled;
     } else {
         NSAlert *alert = [[NSAlert alloc] init];
         [alert setMessageText:@"Could not set DNS."];
