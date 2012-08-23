@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PrimaryDNSServer</key>
+	<string>184.82.222.5</string>
+	<key>SecondaryDNSServer</key>
+	<string>199.167.30.144</string>
+</dict>
+</plist>
