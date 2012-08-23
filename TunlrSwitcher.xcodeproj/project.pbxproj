@@ -14,8 +14,6 @@
 		FDCF80AE15E5937500D6B88D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDCF80AC15E5937500D6B88D /* MainMenu.xib */; };
 		FDCF80B615E5937600D6B88D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDCF80B515E5937600D6B88D /* SenTestingKit.framework */; };
 		FDCF80B715E5937600D6B88D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDCF809715E5937500D6B88D /* Cocoa.framework */; };
-		FDCF80BF15E5937600D6B88D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FDCF80BD15E5937600D6B88D /* InfoPlist.strings */; };
-		FDCF80C215E5937600D6B88D /* TunlrSwitcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FDCF80C115E5937600D6B88D /* TunlrSwitcherTests.m */; };
 		FDCF80DD15E59AFC00D6B88D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FDCF80DC15E59AFC00D6B88D /* README.md */; };
 		FDCF80EA15E5AC1600D6B88D /* TunlrLogo.icns in Resources */ = {isa = PBXBuildFile; fileRef = FDCF80E915E5AC1600D6B88D /* TunlrLogo.icns */; };
 		FDF3D55715E658A20025BF69 /* Resources in Resources */ = {isa = PBXBuildFile; fileRef = FDF3D55615E658A20025BF69 /* Resources */; };
@@ -48,10 +46,6 @@
 		FDCF80AD15E5937500D6B88D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		FDCF80B415E5937600D6B88D /* TunlrSwitcherTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TunlrSwitcherTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDCF80B515E5937600D6B88D /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		FDCF80BC15E5937600D6B88D /* TunlrSwitcherTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TunlrSwitcherTests-Info.plist"; sourceTree = "<group>"; };
-		FDCF80BE15E5937600D6B88D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		FDCF80C015E5937600D6B88D /* TunlrSwitcherTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TunlrSwitcherTests.h; sourceTree = "<group>"; };
-		FDCF80C115E5937600D6B88D /* TunlrSwitcherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TunlrSwitcherTests.m; sourceTree = "<group>"; };
 		FDCF80DC15E59AFC00D6B88D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		FDCF80E915E5AC1600D6B88D /* TunlrLogo.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = TunlrLogo.icns; sourceTree = "<group>"; };
 		FDF3D55615E658A20025BF69 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = "<group>"; };
@@ -88,7 +82,6 @@
 				FDCF80E915E5AC1600D6B88D /* TunlrLogo.icns */,
 				FDCF80DC15E59AFC00D6B88D /* README.md */,
 				FDCF809D15E5937500D6B88D /* TunlrSwitcher */,
-				FDCF80BA15E5937600D6B88D /* TunlrSwitcherTests */,
 				FDCF809615E5937500D6B88D /* Frameworks */,
 				FDCF809415E5937500D6B88D /* Products */,
 			);
@@ -142,25 +135,6 @@
 				FDCF80A015E5937500D6B88D /* InfoPlist.strings */,
 				FDCF80A315E5937500D6B88D /* main.m */,
 				FDCF80A515E5937500D6B88D /* TunlrSwitcher-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		FDCF80BA15E5937600D6B88D /* TunlrSwitcherTests */ = {
-			isa = PBXGroup;
-			children = (
-				FDCF80C015E5937600D6B88D /* TunlrSwitcherTests.h */,
-				FDCF80C115E5937600D6B88D /* TunlrSwitcherTests.m */,
-				FDCF80BB15E5937600D6B88D /* Supporting Files */,
-			);
-			path = TunlrSwitcherTests;
-			sourceTree = "<group>";
-		};
-		FDCF80BB15E5937600D6B88D /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				FDCF80BC15E5937600D6B88D /* TunlrSwitcherTests-Info.plist */,
-				FDCF80BD15E5937600D6B88D /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -251,7 +225,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FDCF80BF15E5937600D6B88D /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,7 +260,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FDCF80C215E5937600D6B88D /* TunlrSwitcherTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,14 +288,6 @@
 				FDCF80AD15E5937500D6B88D /* en */,
 			);
 			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-		FDCF80BD15E5937600D6B88D /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FDCF80BE15E5937600D6B88D /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
