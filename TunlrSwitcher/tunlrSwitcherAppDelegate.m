@@ -48,6 +48,7 @@ NSImage *tunlrOnImage;
     NSString *fullPath = [[NSBundle mainBundle] pathForResource:@"tunlrOff.png" ofType:nil inDirectory:@"Resources"];
     NSImage *image = [[NSImage alloc] initWithContentsOfFile:fullPath];
     [statusItem setImage: image];
+    [statusItem setHighlightMode:YES];
 }
 
 -(IBAction)switch:(id)sender {
