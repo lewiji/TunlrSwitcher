@@ -5,6 +5,13 @@ A quick menubar application for Mac OS X 10.6+ that lets you quickly switch betw
 
 If the Tunlr servers change I will try and update this as quickly as possible. You can manually change the servers by clicking the TunlrSwitcher icon and choosing 'Preferences'.
 
+Note that this is VERY easy to modify and redistribute for use with any similar service without even having to download the code. Simply go into the package contents and you'll find:
+
+    Resources/tunlrOff.png - An 18x18 image for when the DNS setting is switched off
+    Resources/tunlrOn.png - An 18x18 image for when the DNS setting is turned on
+    TunlrLogo.icns - The application icon
+    TunlrSwitcher/prefDefaults.plist - A plist file containing the default primary and secondary DNS servers
+
 GNU General Public License
 --------------------------
 

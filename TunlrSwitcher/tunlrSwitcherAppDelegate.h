@@ -26,6 +26,7 @@
 -(IBAction)switch:(id)sender;
 -(IBAction)openPrefsPanel:(id)sender;
 -(IBAction)savePrefs:(id)sender;
+-(bool)executeShellScriptFromResourcesFolderAndReturnSuccess:(NSString *) scriptName;
 @property (assign) IBOutlet NSWindow *window;
 @property (assign) IBOutlet NSTextField *primaryDNSField;
 @property (assign) IBOutlet NSTextField *secondaryDNSField;

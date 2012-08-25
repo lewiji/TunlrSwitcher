@@ -17,25 +17,22 @@
 //  GNU General Public License for more details.
 
 #import "tunlrSwitcherAppDelegate.h"
+#import "StatusItemView.h"
 
 @implementation tunlrSwitcherAppDelegate
 
-bool toggled = NO;
 bool firstRun = YES;
 
-NSImage *tunlrOffImage;
-NSImage *tunlrOnImage;
 NSString *primaryDNS;
 NSString *secondaryDNS;
+StatusItemView *statusItemView;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
+    // Register preference defaults for DNS servers
     NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"prefDefaults" ofType:@"plist"];
     NSDictionary *plistDefaults = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
-    NSDictionary *appDefaults = [NSDictionary dictionaryWithObjectsAndKeys:
-                                 [plistDefaults objectForKey:@"PrimaryDNSServer"], @"PrimaryDNSServer",
-                                 [plistDefaults objectForKey:@"SecondaryDNSServer"], @"SecondaryDNSServer",
-                                 nil];
+    NSDictionary *appDefaults = plistDefaults;
     [[NSUserDefaults standardUserDefaults] registerDefaults:appDefaults];
 }
 
@@ -48,33 +45,30 @@ NSString *secondaryDNS;
     NSString *scriptPath = [[NSBundle mainBundle] pathForResource:scriptName ofType:nil inDirectory:@"Resources"];
     /* Create AppleScript to run script */
     NSMutableString *scriptSource = [NSMutableString stringWithFormat:@"do shell script \"%@ %@ %@ %d\" with administrator privileges", scriptPath, primaryDNS, secondaryDNS, firstRun];
-    
     /* Init applescript and execute, returns false if error occurs */
     NSAppleScript *appleScript = [[NSAppleScript alloc] initWithSource:scriptSource];
     NSDictionary *scriptError = [[NSDictionary alloc] init];
-    firstRun = NO;
+    firstRun = NO; /* The first switch we do always switches to the specified DNS servers (for consistency with menubar icon state) */
     return [appleScript executeAndReturnError:&scriptError];
 }
 
 -(void)awakeFromNib{
-    /* Load images for menubar icon */
-    NSString *fullPath = [[NSBundle mainBundle] pathForResource:@"tunlrOn.png" ofType:nil inDirectory:@"Resources"];
-    tunlrOnImage = [[NSImage alloc] initWithContentsOfFile:fullPath];
-    
-    fullPath = [[NSBundle mainBundle] pathForResource:@"tunlrOff.png" ofType:nil inDirectory:@"Resources"];
-    tunlrOffImage = [[NSImage alloc] initWithContentsOfFile:fullPath];
 
+    /* Create menubar item */
     statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
-    [statusItem setMenu:statusMenu];
     
-    [statusItem setImage: tunlrOffImage];
-    [statusItem setHighlightMode:YES];
+    statusItemView = [[StatusItemView alloc] init];
+    statusItemView.statusItem = statusItem;
+    [statusItemView setMenu:statusMenu];
+    [statusItemView setToolTip:NSLocalizedString(@"TunlrSwitcher",
+                                                 @"Status Item Tooltip")];
+    [statusItem setView:statusItemView];
 }
 
 -(IBAction)switch:(id)sender {
+    /* Execute switch script and switch image; if switching failed pop up an error */
     if ([self executeShellScriptFromResourcesFolderAndReturnSuccess:@"switch.sh"] ) {
-        toggled ? [statusItem setImage: tunlrOffImage] : [statusItem setImage: tunlrOnImage];
-        toggled = !toggled;
+        [statusItemView toggleImage];
     } else {
         NSAlert *alert = [[NSAlert alloc] init];
         [alert setMessageText:@"Could not set DNS."];

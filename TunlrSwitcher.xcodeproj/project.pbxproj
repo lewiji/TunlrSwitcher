@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD095E0815E8FC4700C7D045 /* StatusItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = FD095E0715E8FC4700C7D045 /* StatusItemView.m */; };
 		FDCF809815E5937500D6B88D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDCF809715E5937500D6B88D /* Cocoa.framework */; };
 		FDCF80A215E5937500D6B88D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FDCF80A015E5937500D6B88D /* InfoPlist.strings */; };
 		FDCF80A415E5937500D6B88D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FDCF80A315E5937500D6B88D /* main.m */; };
@@ -32,6 +33,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FD095E0615E8FC4700C7D045 /* StatusItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusItemView.h; sourceTree = "<group>"; };
+		FD095E0715E8FC4700C7D045 /* StatusItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusItemView.m; sourceTree = "<group>"; };
 		FDCF809315E5937500D6B88D /* TunlrSwitcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TunlrSwitcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDCF809715E5937500D6B88D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		FDCF809A15E5937500D6B88D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -124,6 +127,8 @@
 				FDCF80AC15E5937500D6B88D /* MainMenu.xib */,
 				FDCF809E15E5937500D6B88D /* Supporting Files */,
 				FDF3D55815E6594D0025BF69 /* prefDefaults.plist */,
+				FD095E0615E8FC4700C7D045 /* StatusItemView.h */,
+				FD095E0715E8FC4700C7D045 /* StatusItemView.m */,
 			);
 			path = TunlrSwitcher;
 			sourceTree = "<group>";
@@ -253,6 +258,7 @@
 			files = (
 				FDCF80A415E5937500D6B88D /* main.m in Sources */,
 				FDCF80AB15E5937500D6B88D /* tunlrSwitcherAppDelegate.m in Sources */,
+				FD095E0815E8FC4700C7D045 /* StatusItemView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
