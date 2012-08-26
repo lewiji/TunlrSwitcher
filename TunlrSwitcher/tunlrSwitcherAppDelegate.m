@@ -19,6 +19,7 @@
 #import "tunlrSwitcherAppDelegate.h"
 
 @implementation tunlrSwitcherAppDelegate
+@synthesize window, primaryDNSField, secondaryDNSField;
 
 bool toggled = NO;
 bool firstRun = YES;
@@ -28,12 +29,13 @@ NSImage *tunlrOnImage;
 NSString *primaryDNS;
 NSString *secondaryDNS;
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
+-(void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"prefDefaults" ofType:@"plist"];
     NSDictionary *plistDefaults = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
     NSDictionary *appDefaults = plistDefaults;
     [[NSUserDefaults standardUserDefaults] registerDefaults:appDefaults];
+    [plistDefaults release];
 }
 
 -(bool)executeShellScriptFromResourcesFolderAndReturnSuccess:(NSString *) scriptName {
@@ -50,7 +52,11 @@ NSString *secondaryDNS;
     NSAppleScript *appleScript = [[NSAppleScript alloc] initWithSource:scriptSource];
     NSDictionary *scriptError = [[NSDictionary alloc] init];
     firstRun = NO;
-    return [appleScript executeAndReturnError:&scriptError];
+    bool success;
+    success = [appleScript executeAndReturnError:&scriptError];
+    [appleScript release];
+    [scriptError release];
+    return success;
 }
 
 -(void)awakeFromNib{
@@ -66,7 +72,7 @@ NSString *secondaryDNS;
     [statusItem setMenu:statusMenu];
     [statusItem setImage: tunlrOffImage];
     [statusItem setHighlightMode:YES];
-
+    [statusItem retain];
 }
 
 -(IBAction)switch:(id)sender {
@@ -77,6 +83,7 @@ NSString *secondaryDNS;
         NSAlert *alert = [[NSAlert alloc] init];
         [alert setMessageText:@"Could not set DNS."];
         [alert runModal];
+        [alert release];
     }
 }
 
@@ -99,6 +106,18 @@ NSString *secondaryDNS;
     [[NSUserDefaults standardUserDefaults] setObject:[[self primaryDNSField] stringValue] forKey:@"PrimaryDNSServer"];
     [[NSUserDefaults standardUserDefaults] setObject:[[self secondaryDNSField] stringValue] forKey:@"SecondaryDNSServer"];
     [prefsWindow close];
+}
+
+-(void)dealloc {
+    [window release], window = nil;
+    [primaryDNSField release], primaryDNSField = nil;
+    [secondaryDNSField release], secondaryDNSField = nil;
+    [tunlrOffImage release], tunlrOffImage = nil;
+    [tunlrOnImage release], tunlrOnImage = nil;
+    [prefsWindow release], prefsWindow = nil;
+    toggled = nil;
+    firstRun = nil;
+    [super dealloc];
 }
 
 @end

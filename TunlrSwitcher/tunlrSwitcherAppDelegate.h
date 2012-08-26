@@ -21,13 +21,16 @@
 @interface tunlrSwitcherAppDelegate : NSObject <NSApplicationDelegate> {
     NSWindowController *prefsWindow;
     IBOutlet NSMenu *statusMenu;
-    NSStatusItem * statusItem;
+    NSStatusItem *statusItem;
+    IBOutlet NSWindow *window;
+    IBOutlet NSTextField *primaryDNSField;
+    IBOutlet NSTextField *secondaryDNSField;
 }
 -(IBAction)switch:(id)sender;
 -(IBAction)openPrefsPanel:(id)sender;
 -(IBAction)savePrefs:(id)sender;
-@property (assign) IBOutlet NSWindow *window;
-@property (assign) IBOutlet NSTextField *primaryDNSField;
-@property (assign) IBOutlet NSTextField *secondaryDNSField;
+@property (retain, nonatomic) IBOutlet NSWindow *window;
+@property (retain, nonatomic) IBOutlet NSTextField *primaryDNSField;
+@property (retain, nonatomic) IBOutlet NSTextField *secondaryDNSField;
 
 @end
