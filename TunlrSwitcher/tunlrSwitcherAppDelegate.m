@@ -32,10 +32,7 @@ NSString *secondaryDNS;
 {
     NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"prefDefaults" ofType:@"plist"];
     NSDictionary *plistDefaults = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
-    NSDictionary *appDefaults = [NSDictionary dictionaryWithObjectsAndKeys:
-                                 [plistDefaults objectForKey:@"PrimaryDNSServer"], @"PrimaryDNSServer",
-                                 [plistDefaults objectForKey:@"SecondaryDNSServer"], @"SecondaryDNSServer",
-                                 nil];
+    NSDictionary *appDefaults = plistDefaults;
     [[NSUserDefaults standardUserDefaults] registerDefaults:appDefaults];
 }
 
@@ -64,11 +61,12 @@ NSString *secondaryDNS;
     fullPath = [[NSBundle mainBundle] pathForResource:@"tunlrOff.png" ofType:nil inDirectory:@"Resources"];
     tunlrOffImage = [[NSImage alloc] initWithContentsOfFile:fullPath];
 
+    /* Create menubar item */
     statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     [statusItem setMenu:statusMenu];
-    
     [statusItem setImage: tunlrOffImage];
     [statusItem setHighlightMode:YES];
+
 }
 
 -(IBAction)switch:(id)sender {
