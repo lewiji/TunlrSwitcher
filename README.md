@@ -1,7 +1,9 @@
 TunlrSwitcher
 =============
 
-A quick menubar application for Mac OS X 10.5+ that lets you quickly switch between the [Tunlr DNS servers](http://www.tunlr.net) (or any set of primary and secondary DNS servers) and default empty DNS settings on all adaptors.
+A quick menubar application for Mac OS X 10.7+ that lets you quickly switch between the [Tunlr DNS servers](http://www.tunlr.net) (or any set of primary and secondary DNS servers) and default empty DNS settings on all adaptors.
+
+Officially only supports 10.7+ but will run on 10.5, but I haven't done any testing below 10.7.
 
 If the Tunlr servers change I will try and update this as quickly as possible. You can manually change the servers by clicking the TunlrSwitcher icon and choosing 'Preferences'.
 
