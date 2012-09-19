@@ -1,6 +1,8 @@
 TunlrSwitcher
 =============
 
+NOTE: This app is no longer under development due to the discovery of in built Location switching. Go to System Preferences > Network and add a new location and it's much more convenient than this app.
+
 A quick menubar application for Mac OS X 10.7+ that lets you quickly switch between the [Tunlr DNS servers](http://www.tunlr.net) (or any set of primary and secondary DNS servers) and default empty DNS settings on all adaptors.
 
 Officially only supports 10.7+ but will run on 10.5, but I haven't done any testing below 10.7.
