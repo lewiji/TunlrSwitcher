@@ -17,11 +17,11 @@
 #  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 #  GNU General Public License for more details.
 
-You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+# You should have received a copy of the GNU General Public License
+# along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
 # Takes 3 parameters, DNS1, DNS2 and whether this is the first run of the script for this session
 IFS=$'\n'
-adapters=`networksetup -listallnetworkservices |grep -v denotes`
+adapters=`networksetup -listallnetworkservices |grep -v denotes | sed "s/^\*//"`
 dns1=$1
 dns2=$2
 firstRun=$3
@@ -31,10 +31,13 @@ echo $firstRun
 
 for adapter in $adapters
 do
-	dnssvr=(`networksetup -getdnsservers $adapter`)
-	if [[ ($dnssvr != $dns1) || ($firstRun != 0) ]]; then
-		networksetup -setdnsservers $adapter $dns1 $dns2
-	else
-		networksetup -setdnsservers $adapter empty
-	fi
+  non_tunlr_dns=(`networksetup -getdnsservers $adapter | grep -v 'Please note' | grep -v $dns1 | grep -v $dns2`)
+  has_dns1=(`networksetup -getdnsservers $adapter | grep -v 'Please note' | grep $dns1`)
+  has_dns2=(`networksetup -getdnsservers $adapter | grep -v 'Please note' | grep $dns2`)
+
+  if [[ (-z $has_dns1) || (-z $has_dns2) || (($firstRun != 0) && (-z $firstRun)) ]]; then
+    `networksetup -setdnsservers $adapter $dns1 $dns2 ${non_tunlr_dns[@]}`
+  else
+    `networksetup -setdnsservers $adapter ${non_tunlr_dns[@]}`
+  fi
 done
