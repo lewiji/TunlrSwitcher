@@ -31,13 +31,13 @@ echo $firstRun
 
 for adapter in $adapters
 do
-  non_tunlr_dns=(`networksetup -getdnsservers $adapter | grep -v 'Please note' | grep -v $dns1 | grep -v $dns2`)
-  has_dns1=(`networksetup -getdnsservers $adapter | grep -v 'Please note' | grep $dns1`)
-  has_dns2=(`networksetup -getdnsservers $adapter | grep -v 'Please note' | grep $dns2`)
+  non_tunlr_dns=(`networksetup -getdnsservers $adapter | grep -v 'Please note' | grep -v "There aren't any DNS Servers set" | grep -v $dns1 | grep -v $dns2`)
+  has_dns1=(`networksetup -getdnsservers $adapter | grep $dns1`)
+  has_dns2=(`networksetup -getdnsservers $adapter | grep $dns2`)
 
   if [[ (-z $has_dns1) || (-z $has_dns2) || (($firstRun != 0) && (-z $firstRun)) ]]; then
     `networksetup -setdnsservers $adapter $dns1 $dns2 ${non_tunlr_dns[@]}`
   else
-    `networksetup -setdnsservers $adapter ${non_tunlr_dns[@]}`
+    `networksetup -setdnsservers $adapter ${non_tunlr_dns[@]-empty}`
   fi
 done
