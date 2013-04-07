@@ -59,7 +59,7 @@ NSString *secondaryDNS;
     return success;
 }
 
--(void)awakeFromNib{
+-(void)awakeFromNib {
     /* Load images for menubar icon */
     NSString *fullPath = [[NSBundle mainBundle] pathForResource:@"tunlrOn.png" ofType:nil inDirectory:@"Resources"];
     tunlrOnImage = [[NSImage alloc] initWithContentsOfFile:fullPath];
@@ -74,7 +74,7 @@ NSString *secondaryDNS;
     [statusItem setHighlightMode:YES];
     [statusItem retain];
 }
-
+                              
 -(IBAction)switch:(id)sender {
     if ([self executeShellScriptFromResourcesFolderAndReturnSuccess:@"switch.sh"] ) {
         toggled ? [statusItem setImage: tunlrOffImage] : [statusItem setImage: tunlrOnImage];
@@ -95,6 +95,27 @@ NSString *secondaryDNS;
     primaryDNS = [[NSUserDefaults standardUserDefaults] stringForKey:@"PrimaryDNSServer"];
     secondaryDNS = [[NSUserDefaults standardUserDefaults] stringForKey:@"SecondaryDNSServer"];
     
+
+    NSArray *webDNS = [self getWebDNS];
+    NSString *webPrimaryDNS = [webDNS objectAtIndex:0];
+    NSString *webSecondaryDNS = [webDNS objectAtIndex:1];
+    
+    if ( [primaryDNS isNotEqualTo: webPrimaryDNS] || [secondaryDNS isNotEqualTo: webSecondaryDNS] ) {
+        NSAlert *dnsalert = [[NSAlert alloc] init];
+        [dnsalert setMessageText:@"Tunlr.net has updated their DNS IPs!"];
+        [dnsalert setInformativeText:@"Would you like to Update your DNS settings?\nBe aware, this cannot be undone."];
+        [dnsalert addButtonWithTitle:@"Ok"];
+        [dnsalert addButtonWithTitle:@"No Thanks"];
+        [dnsalert setAlertStyle:NSWarningAlertStyle];
+        
+        if ([dnsalert runModal] == NSAlertFirstButtonReturn) {
+            // OK clicked, update the record
+            primaryDNS = webPrimaryDNS;
+            secondaryDNS = webSecondaryDNS;
+        }
+        [dnsalert release];
+    }
+    
     [[self primaryDNSField] setStringValue: primaryDNS];
     [[self secondaryDNSField] setStringValue: secondaryDNS];
 	[prefsWindow showWindow:self];
@@ -106,6 +127,44 @@ NSString *secondaryDNS;
     [[NSUserDefaults standardUserDefaults] setObject:[[self primaryDNSField] stringValue] forKey:@"PrimaryDNSServer"];
     [[NSUserDefaults standardUserDefaults] setObject:[[self secondaryDNSField] stringValue] forKey:@"SecondaryDNSServer"];
     [prefsWindow close];
+}
+
+-(NSArray *)getWebDNS {
+    /* Get DNS ip's from website */
+    NSURL *targetURL = [NSURL URLWithString:@"http://tunlr.net/get-started/"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:targetURL];
+    NSData *dataResponse = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    
+    // Create a string from dataResponse using encoding so we can parse the response.
+    NSString *dataString = [[NSString alloc] initWithData:dataResponse encoding:NSASCIIStringEncoding];
+    
+    // Parse data into an array, where dataString equals '<span style="font-size: xx-large;">' (well, sort of..)
+    NSArray *components = [dataString componentsSeparatedByString:@"font-size: xx-large;"];
+    
+    // Create a Mutable for storing the output of the for-loop
+    NSMutableArray *webDNSIPArray = [NSMutableArray arrayWithCapacity:2];
+    
+    // Time for Parsing the HTML into single ip's
+    for (NSString *queryString in components) {
+        // look for the closing bracket of '<span style="font-size: xx-large;">'
+        NSArray *queryComponents = [queryString componentsSeparatedByString:@">"];
+        NSString *parseString = [queryComponents objectAtIndex:1];
+        
+        // Parse out the remaining '</span>'
+        NSArray *qC = [parseString componentsSeparatedByString:@"<"];
+        NSString *ipString = [qC objectAtIndex:0];
+		      
+        // add parsed ip to array so we can access it outside the loop
+        [webDNSIPArray addObject:[NSString stringWithFormat:@"%@", ipString]];
+        
+    }
+
+    // clean out unnecessary data that slipped though
+    NSMutableArray *cleanArray = [NSMutableArray arrayWithArray:webDNSIPArray];
+    [cleanArray removeObjectAtIndex:0];
+    webDNSIPArray = [[NSArray arrayWithArray: cleanArray] retain];
+
+    return [webDNSIPArray autorelease];
 }
 
 -(void)dealloc {

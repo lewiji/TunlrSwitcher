@@ -29,6 +29,7 @@
 -(IBAction)switch:(id)sender;
 -(IBAction)openPrefsPanel:(id)sender;
 -(IBAction)savePrefs:(id)sender;
+-(NSArray *)getWebDNS;
 @property (retain, nonatomic) IBOutlet NSWindow *window;
 @property (retain, nonatomic) IBOutlet NSTextField *primaryDNSField;
 @property (retain, nonatomic) IBOutlet NSTextField *secondaryDNSField;
